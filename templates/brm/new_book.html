@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Book Record </title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}"/>
+</head>
+<body>
+<div id="header">
+    <h1>Book Record management</h1>
+    <div id="nav">
+        <a href="http://localhost:8000/brm/view-books">ViewBooks </a>
+        <a href="http://localhost:8000/brm/new-book">AddNewBook</a>
+        <a href="http://localhost:8000/brm/search-book">searchBook</a>
+        <a href="http://localhost:8000/brm/logout/">Logout</a>
+    </div>
+
+</div>
+<div id="main">
+    <h2>Edit Book Record</h2>
+    <form action="http://localhost:8000/brm/add/" method="post" onsubmit="return validate()">
+        {% csrf_token %}
+        {{ form }}
+        <input id="rahul" type="submit" value="save">
+    </form>
+</div>
+
+</body>
+</html>
